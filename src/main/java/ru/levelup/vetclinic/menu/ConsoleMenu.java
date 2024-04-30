@@ -11,6 +11,12 @@ public class ConsoleMenu {
     public static void printGeneralMenu() {
         System.out.println();
         System.out.println("Меню:");
+        System.out.println("1. Вызвать меню работы с клиентами");
+        System.out.println("2. Вызвать меню работы с питомцами");
+        System.out.println("3. Вызвать меню работы с ветеринарами");
+        System.out.println("4. Вызвать меню для записи к ветеринару");
+        System.out.println("5. Вызвать меню услуг");
+        System.out.println("6. Вызвать меню работы с платежами");
         System.out.println("0. Выход");
     }
 
