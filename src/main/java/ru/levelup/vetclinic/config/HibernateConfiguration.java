@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import ru.levelup.vetclinic.domain.*;
 
 import java.util.Properties;
 
@@ -30,7 +31,13 @@ public class HibernateConfiguration {
                 .applySettings(properties)
                 .build();
 
-        Configuration configuration = new Configuration();
+        Configuration configuration = new Configuration()
+                .addAnnotatedClass(Animals.class)
+                .addAnnotatedClass(Customers.class)
+                .addAnnotatedClass(Payments.class)
+                .addAnnotatedClass(RecordingVets.class)
+                .addAnnotatedClass(Services.class)
+                .addAnnotatedClass(Vets.class);
 
 
 
