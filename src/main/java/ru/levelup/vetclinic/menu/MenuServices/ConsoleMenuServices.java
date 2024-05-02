@@ -1,22 +1,20 @@
-package ru.levelup.vetclinic.menu.MenuAnimals;
+package ru.levelup.vetclinic.menu.MenuServices;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ConsoleMenuAnimals {
+public class ConsoleMenuServices {
 
     private static final BufferedReader CONSOLE_READER = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void printGeneralMenuAnimals() {
+    public static void printGeneralMenuServices() {
         System.out.println();
         System.out.println("Меню:");
-        System.out.println("1. Вывести список всех питомцев");
-        System.out.println("2. Добавить нового питомца");
-        System.out.println("3. Обновить информацию о питомце");
-        System.out.println("4. Найти питомца по ID клиента");
-        System.out.println("5. Найти питомца по кличке");
-        System.out.println("6. Удалить питомца");
+        System.out.println("1. Вывести список всех услуг");
+        System.out.println("2. Добавить новую услугу");
+        System.out.println("3. Обновить услугу");
+        System.out.println("4. Удалить услугу");
         System.out.println("0. Вернуться в главное меню");
     }
 

@@ -17,7 +17,7 @@ public class ConsoleMenuCustomers {
         System.out.println("4. Найти клиента по ID питомца");
         System.out.println("5. Найти клиента по Фамилии");
         System.out.println("6. Удалить клиента");
-        System.out.println("0. Вернуться в предыдущее меню");
+        System.out.println("0. Вернуться в главное меню");
     }
 
     public static String readString(String message) {

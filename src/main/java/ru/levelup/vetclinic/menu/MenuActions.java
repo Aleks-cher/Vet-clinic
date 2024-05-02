@@ -3,7 +3,9 @@ package ru.levelup.vetclinic.menu;
 import ru.levelup.vetclinic.menu.MenuAnimals.StartMenuAnimal;
 import ru.levelup.vetclinic.menu.MenuCustomers.ConsoleMenuCustomers;
 import ru.levelup.vetclinic.menu.MenuCustomers.StartMenuCustomer;
+import ru.levelup.vetclinic.menu.MenuPayments.StartMenuPayment;
 import ru.levelup.vetclinic.menu.MenuRecordingVets.StartMenuRecordingVet;
+import ru.levelup.vetclinic.menu.MenuServices.StartMenuService;
 import ru.levelup.vetclinic.menu.MenuVets.StartMenuVet;
 import ru.levelup.vetclinic.menu.action.ExitAction;
 
@@ -19,6 +21,8 @@ public class MenuActions {
         ACTION_MAP.put(2, new StartMenuAnimal());
         ACTION_MAP.put(3, new StartMenuVet());
         ACTION_MAP.put(4, new StartMenuRecordingVet());
+        ACTION_MAP.put(5, new StartMenuService());
+        ACTION_MAP.put(6, new StartMenuPayment());
     }
 
 

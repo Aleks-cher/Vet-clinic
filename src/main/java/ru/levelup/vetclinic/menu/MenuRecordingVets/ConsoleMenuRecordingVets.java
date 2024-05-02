@@ -18,7 +18,7 @@ public class ConsoleMenuRecordingVets {
         System.out.println("5. Найти запись на прием по ID клиента");
         System.out.println("6. Найти запись на прием по ID питомца");
         System.out.println("7. Удалить запись на прием");
-        System.out.println("0. Вернуться в предыдущее меню");
+        System.out.println("0. Вернуться в главное меню");
     }
 
     public static String readString(String message) {

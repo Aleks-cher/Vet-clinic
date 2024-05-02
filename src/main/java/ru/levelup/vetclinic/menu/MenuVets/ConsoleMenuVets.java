@@ -15,7 +15,7 @@ public class ConsoleMenuVets {
         System.out.println("2. Добавить нового ветеринара");
         System.out.println("3. Обновить информацию о ветеринаре");
         System.out.println("4. Удалить ветеринара");
-        System.out.println("0. Вернуться в предыдущее меню");
+        System.out.println("0. Вернуться в главное меню");
     }
 
     public static String readString(String message) {
