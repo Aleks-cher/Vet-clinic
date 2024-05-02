@@ -1,22 +1,20 @@
-package ru.levelup.vetclinic.menu.MenuCustomers;
+package ru.levelup.vetclinic.menu.MenuVets;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ConsoleMenuCustomers {
+public class ConsoleMenuVets {
 
     private static final BufferedReader CONSOLE_READER = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void printGeneralMenuCustomers() {
+    public static void printGeneralMenuVets() {
         System.out.println();
         System.out.println("Меню:");
-        System.out.println("1. Вывести список всех клиентов");
-        System.out.println("2. Добавить нового клиента");
-        System.out.println("3. Обновить информацию о клиенте");
-        System.out.println("4. Найти клиента по ID питомца");
-        System.out.println("5. Найти клиента по Фамилии");
-        System.out.println("6. Удалить клиента");
+        System.out.println("1. Вывести список всех ветеринаров");
+        System.out.println("2. Добавить нового ветеринара");
+        System.out.println("3. Обновить информацию о ветеринаре");
+        System.out.println("4. Удалить ветеринара");
         System.out.println("0. Вернуться в предыдущее меню");
     }
 
