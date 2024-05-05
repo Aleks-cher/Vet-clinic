@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Getter
 @ToString
@@ -20,14 +21,45 @@ public class RecordingVets {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "customer_personnel_number")
-    private String customerPersonnelNumber;
-    @Column(name = "animal_personnel_number")
-    private String animalPersonnelNumber;
-    @Column(name = "vet_personnel_number")
-    private String vetPersonnelNumber;
-    @Column(name = "service_personnel_number")
-    private String servicePersonnelNumber;
+//    @Column(name = "customer_personnel_number")
+//    private String customerPersonnelNumber;
+    @ManyToOne
+    @JoinColumn(
+            name = "customer_personnel_number",
+            referencedColumnName = "personnel_number"
+    )
+    private Customers customer;
+//    @Column(name = "animal_personnel_number")
+//    private String animalPersonnelNumber;
+    @ManyToOne
+    @JoinColumn(
+            name = "animal_personnel_number",
+            referencedColumnName = "personnel_number"
+    )
+    private Animals animal;
+//    @Column(name = "vet_personnel_number")
+//    private String vetPersonnelNumber;
+    @ManyToOne
+    @JoinColumn(
+            name = "vet_personnel_number",
+            referencedColumnName = "personnel_number"
+    )
+    private Vets vet;
+//    @Column(name = "service_personnel_number")
+//    private String servicePersonnelNumber;
+    @ManyToOne
+    @JoinColumn(
+            name = "service_personnel_number",
+            referencedColumnName = "personnel_number"
+    )
+    private Services service;
     @Column(name = "date")
     private Timestamp date;
+
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            mappedBy = "recordingVetsList",
+            cascade = CascadeType.ALL
+    )
+    private List<Customers> customersList;
 }

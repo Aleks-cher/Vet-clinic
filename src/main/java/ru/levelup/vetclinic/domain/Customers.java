@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 @Getter
-@ToString
+@ToString(exclude = {"service", "recordingVetsList", "animalList"})
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -34,11 +34,28 @@ public class Customers {
     private String phoneNumber;
     @Column(name = "date")
     private Timestamp date;
-//    @ManyToOne
-//    @JoinColumn(
-//            name = "id",
-//            referencedColumnName = "customer_id"
-//    )
-//    private List<Animals> animal;
+    @OneToMany(mappedBy = "customer")
+    private List<Animals> animalList;
 
+//    @ManyToMany
+//    @JoinTable(
+//            name = "customers_and_organization",
+//            joinColumns = @JoinColumn(name = "customer_id"),
+//            inverseJoinColumns = @JoinColumn(name = "organization_id")
+//    )
+//    private List<Organization> organizations;
+    @ManyToMany
+    @JoinTable(
+            name = "payments",
+            joinColumns = @JoinColumn(name = "customer_personnel_number"),
+            inverseJoinColumns = @JoinColumn(name = "service_personnel_number")
+    )
+    private List<Services> service;
+    @ManyToMany
+    @JoinTable(
+            name = "payments",
+            joinColumns = @JoinColumn(name = "customer_personnel_number"),
+            inverseJoinColumns = @JoinColumn(name = "recording_date")
+    )
+    private List<RecordingVets> recordingVetsList;
 }

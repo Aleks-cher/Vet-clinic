@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Getter
-@ToString
+@ToString(exclude = "customer")
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -26,13 +26,9 @@ public class Animals {
     private String animalType;
     @Column(name = "date")
     private Timestamp date;
-    @Column(name = "customer_id")
-    private long customerId;
-//    @OneToMany(
-//            mappedBy = "animals",
-//            fetch = FetchType.LAZY
-//    )
-//    private List<Customers> customer;
+    @ManyToOne
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    private Customers customer;
 
 
 }

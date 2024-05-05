@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
 @ToString
@@ -26,4 +27,10 @@ public class Services {
     private String serviceName;
     @Column(name = "price")
     private BigDecimal price;
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            mappedBy = "service",
+            cascade = CascadeType.ALL
+    )
+    private List<Customers> customersList;
 }
