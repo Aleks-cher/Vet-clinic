@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.sql.Timestamp;
+import java.util.List;
+import java.util.Set;
 
 @Getter
 @ToString
@@ -30,9 +32,13 @@ public class Customers {
     private String middleName;
     @Column(name = "phone_number")
     private String phoneNumber;
-    @Column(name = "animal_personnel_number")
-    private String animalPersonnelNumber;
     @Column(name = "date")
     private Timestamp date;
+//    @ManyToOne
+//    @JoinColumn(
+//            name = "id",
+//            referencedColumnName = "customer_id"
+//    )
+//    private List<Animals> animal;
 
 }

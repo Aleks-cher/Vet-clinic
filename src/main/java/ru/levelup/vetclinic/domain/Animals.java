@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Getter
 @ToString
@@ -25,5 +26,13 @@ public class Animals {
     private String animalType;
     @Column(name = "date")
     private Timestamp date;
+    @Column(name = "customer_id")
+    private long customerId;
+//    @OneToMany(
+//            mappedBy = "animals",
+//            fetch = FetchType.LAZY
+//    )
+//    private List<Customers> customer;
+
 
 }
