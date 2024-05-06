@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @ToString(exclude = "customer")
 @NoArgsConstructor
-@AllArgsConstructor
+
 @Entity
 @Table(name = "animals")
 public class Animals {
@@ -32,6 +32,15 @@ public class Animals {
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customers customer;
+
+    public Animals(Integer id, String personnelNumber, String animalName, AnimalType animalType, Timestamp date, Customers customer) {
+        this.id = id;
+        this.personnelNumber = personnelNumber;
+        this.animalName = animalName;
+        this.animalType = animalType;
+        this.date = date;
+        this.customer = customer;
+    }
 
 
 }

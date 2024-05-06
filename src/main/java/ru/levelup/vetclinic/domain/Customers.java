@@ -58,4 +58,14 @@ public class Customers {
             inverseJoinColumns = @JoinColumn(name = "recording_date")
     )
     private List<RecordingVets> recordingVetsList;
+
+    public Customers(Integer id, String personnelNumber, String lastName, String firstName, String middleName, String phoneNumber, Timestamp date) {
+        this.personnelNumber = personnelNumber;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.phoneNumber = phoneNumber;
+        this.date = date;
+        this.id = id;
+    }
 }
