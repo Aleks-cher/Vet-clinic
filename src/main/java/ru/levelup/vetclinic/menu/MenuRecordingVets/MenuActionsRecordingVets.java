@@ -1,6 +1,7 @@
 package ru.levelup.vetclinic.menu.MenuRecordingVets;
 
 import ru.levelup.vetclinic.menu.Action;
+import ru.levelup.vetclinic.menu.action.ActionRecordingVets.RecordingVetListMenuAction;
 import ru.levelup.vetclinic.menu.action.ExitAction;
 
 import java.util.HashMap;
@@ -12,6 +13,7 @@ public class MenuActionsRecordingVets {
 
     static {
         ACTION_MAP.put(0, new ExitAction());
+        ACTION_MAP.put(1, new RecordingVetListMenuAction());
     }
 
 

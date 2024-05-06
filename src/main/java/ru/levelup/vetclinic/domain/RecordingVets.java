@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Getter
-@ToString
+@ToString(exclude = {"customer", "animal", "vet", "service", "customersList"})
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -62,4 +62,7 @@ public class RecordingVets {
             cascade = CascadeType.ALL
     )
     private List<Customers> customersList;
+
+
+
 }

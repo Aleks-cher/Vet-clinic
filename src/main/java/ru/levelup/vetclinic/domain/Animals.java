@@ -22,8 +22,11 @@ public class Animals {
     private String personnelNumber;
     @Column(name = "animal_name")
     private String animalName;
+//    @Column(name = "animal_type")
+//    private String animalType;
     @Column(name = "animal_type")
-    private String animalType;
+    @Enumerated(EnumType.STRING)
+    private AnimalType animalType;
     @Column(name = "date")
     private Timestamp date;
     @ManyToOne

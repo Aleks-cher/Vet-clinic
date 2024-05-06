@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
-@ToString
+@ToString(exclude = "customersList")
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -28,7 +28,7 @@ public class Services {
     @Column(name = "price")
     private BigDecimal price;
     @ManyToMany(
-            fetch = FetchType.EAGER,
+            fetch = FetchType.LAZY,
             mappedBy = "service",
             cascade = CascadeType.ALL
     )
