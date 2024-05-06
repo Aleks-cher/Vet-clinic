@@ -33,4 +33,11 @@ public class Services {
             cascade = CascadeType.ALL
     )
     private List<Customers> customersList;
+
+    public Services(Integer id, String personnelNumber, String serviceName, BigDecimal price) {
+        this.id = id;
+        this.personnelNumber = personnelNumber;
+        this.serviceName = serviceName;
+        this.price = price;
+    }
 }

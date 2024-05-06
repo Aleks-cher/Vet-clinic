@@ -3,6 +3,7 @@ package ru.levelup.vetclinic.menu.MenuServices;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 
 public class ConsoleMenuServices {
 
@@ -30,4 +31,6 @@ public class ConsoleMenuServices {
     public static int readInt(String message) {
         return Integer.parseInt(readString(message));
     }
+
+    public static BigDecimal readBigDecimal(String message) {return BigDecimal.valueOf(Long.parseLong(readString(message)));}
 }
