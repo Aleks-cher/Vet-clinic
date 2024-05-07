@@ -40,4 +40,31 @@ public class HibernateAnimalRepository implements AnimalRepository {
             return animal;
         }
     }
+
+    @Override
+    public Animals byPersonnelNumber(String personnelNumber) {
+        try (Session session = factory.openSession()) {
+            return session.createQuery("from Animals where personnelNumber= :paramPersonnelNumber", Animals.class)
+                    .setParameter("paramPersonnelNumber", personnelNumber)
+                    .uniqueResult();
+        }
+    }
+
+    @Override
+    public Animals byAnimalName(String animalName) {
+        try (Session session = factory.openSession()) {
+            return session.createQuery("from Animals where animalName= :paramAnimalName", Animals.class)
+                    .setParameter("paramAnimalName", animalName)
+                    .uniqueResult();
+        }
+    }
+
+    @Override
+    public List<Animals> byCustomerId(Customers customerId) {
+        try (Session session = factory.openSession()) {
+            return session.createQuery("from Animals where customer= :ParamCustomer", Animals.class)
+                    .setParameter("ParamCustomer", customerId)
+                    .list();
+        }
+    }
 }

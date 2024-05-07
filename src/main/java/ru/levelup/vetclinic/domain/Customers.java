@@ -1,15 +1,12 @@
 package ru.levelup.vetclinic.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Set;
-
+@Setter
 @Getter
 @ToString(exclude = {"service", "recordingVetsList", "animalList"})
 @NoArgsConstructor

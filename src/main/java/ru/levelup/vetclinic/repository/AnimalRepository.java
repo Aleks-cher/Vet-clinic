@@ -18,4 +18,10 @@ public interface AnimalRepository {
             Timestamp date,
             Customers customer
     );
+
+    Animals byPersonnelNumber(String personnelNumber);
+
+    Animals byAnimalName(String animalName);
+
+    List<Animals> byCustomerId(Customers customerPersonnelNumber);
 }

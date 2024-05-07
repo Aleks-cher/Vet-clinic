@@ -1,5 +1,6 @@
 package ru.levelup.vetclinic.repository;
 
+import ru.levelup.vetclinic.domain.Animals;
 import ru.levelup.vetclinic.domain.Customers;
 
 import java.sql.Timestamp;
@@ -19,4 +20,14 @@ public interface CustomerRepository {
     );
 
     Customers byId(Integer customerId);
+
+    Customers byLastName(String lastName);
+
+    void update(Customers customer);
+
+    Customers byPersonnelNumber(String personnelNumber);
+
+    void remove(String personnelNumber);
+
+
 }
