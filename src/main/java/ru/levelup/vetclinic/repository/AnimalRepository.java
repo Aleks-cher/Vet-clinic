@@ -24,4 +24,6 @@ public interface AnimalRepository {
     Animals byAnimalName(String animalName);
 
     List<Animals> byCustomerId(Customers customerPersonnelNumber);
+
+    void remove(String personnelNumber);
 }

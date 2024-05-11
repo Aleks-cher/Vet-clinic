@@ -67,4 +67,15 @@ public class HibernateAnimalRepository implements AnimalRepository {
                     .list();
         }
     }
+
+    @Override
+    public void remove(String personnelNumber) {
+        try (Session session = factory.openSession()) {
+            Transaction tx = session.beginTransaction();
+            session.createNativeQuery("delete from animals where personnel_number= ?")
+                    .setParameter(1, personnelNumber)
+                    .executeUpdate();
+            tx.commit();
+        }
+    }
 }

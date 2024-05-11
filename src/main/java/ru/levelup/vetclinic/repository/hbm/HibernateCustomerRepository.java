@@ -64,7 +64,7 @@ public class HibernateCustomerRepository implements CustomerRepository {
         try (Session session = factory.openSession()) {
             Transaction tx = session.beginTransaction();
 
-            Customers customerUpdate = session.get(Customers.class, customer.getPersonnelNumber());
+            Customers customerUpdate = session.get(Customers.class, customer.getPersonnelNumber()); // скорей всего изменить))
 //            customerUpdate.setPersonnelNumber(customer.getPersonnelNumber());
             customerUpdate.setLastName(customer.getLastName());
             customerUpdate.setFirstName(customer.getFirstName());
@@ -72,6 +72,7 @@ public class HibernateCustomerRepository implements CustomerRepository {
             customerUpdate.setPhoneNumber(customer.getPhoneNumber());
             customerUpdate.setDate(customer.getDate());
 
+            session.persist(customerUpdate);
             tx.commit();
         }
     }
@@ -88,9 +89,11 @@ public class HibernateCustomerRepository implements CustomerRepository {
     @Override
     public void remove(String personnelNumber) {
         try (Session session = factory.openSession()) {
-            session.createQuery("delete from Customers where personnelNumber= :paramPersonnelNumber", Customers.class)
-                    .setParameter("paramPersonnelNumber", personnelNumber)
+            Transaction tx = session.beginTransaction();
+            session.createNativeQuery("delete from customers where personnel_number= ?")
+                    .setParameter(1, personnelNumber)
                     .executeUpdate();
+            tx.commit();
         }
     }
 

@@ -28,7 +28,7 @@ public class CustomerUpdateMenuAction implements Action {
         String middleName = ConsoleMenuCustomers.readString("Введите Отчество клиента");
         String phoneNumber = ConsoleMenuCustomers.readString("Введите номер телефона клиента");
         Timestamp date = Timestamp.valueOf(LocalDateTime.now());
-
+        customer.setLastName(lastName);
 
         customerRepository.update(customer);
     }

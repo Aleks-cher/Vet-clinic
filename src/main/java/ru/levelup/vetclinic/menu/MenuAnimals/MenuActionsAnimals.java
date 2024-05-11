@@ -1,10 +1,7 @@
 package ru.levelup.vetclinic.menu.MenuAnimals;
 
 import ru.levelup.vetclinic.menu.Action;
-import ru.levelup.vetclinic.menu.action.ActionAnimals.AnimalByAnimalNameMenuAction;
-import ru.levelup.vetclinic.menu.action.ActionAnimals.AnimalByCustomerIdMenuAction;
-import ru.levelup.vetclinic.menu.action.ActionAnimals.AnimalCreateMenuAction;
-import ru.levelup.vetclinic.menu.action.ActionAnimals.AnimalListMenuAction;
+import ru.levelup.vetclinic.menu.action.ActionAnimals.*;
 import ru.levelup.vetclinic.menu.action.ExitAction;
 
 import java.util.HashMap;
@@ -20,6 +17,7 @@ public class MenuActionsAnimals {
         ACTION_MAP.put(2, new AnimalCreateMenuAction());
         ACTION_MAP.put(4, new AnimalByCustomerIdMenuAction());
         ACTION_MAP.put(5, new AnimalByAnimalNameMenuAction());
+        ACTION_MAP.put(6, new AnimalRemoveMenuAction());
     }
 
 

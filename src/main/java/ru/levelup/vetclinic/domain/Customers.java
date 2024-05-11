@@ -41,6 +41,7 @@ public class Customers {
 //            inverseJoinColumns = @JoinColumn(name = "organization_id")
 //    )
 //    private List<Organization> organizations;
+    // TODO: Проверить!
     @ManyToMany
     @JoinTable(
             name = "payments",
