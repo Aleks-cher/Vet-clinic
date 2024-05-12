@@ -15,6 +15,7 @@ public class VetListMenuAction implements Action {
     public VetListMenuAction() {
         this.vetRepository = new HibernateVetRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         List<Vets> vetsList = vetRepository.all();

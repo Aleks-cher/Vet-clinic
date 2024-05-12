@@ -14,6 +14,7 @@ public class CustomerRemoveMenuAction implements Action {
     public CustomerRemoveMenuAction() {
         this.customerRepository = new HibernateCustomerRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         String customerPersonnelNumber = ConsoleMenuCustomers.readString("Введите персональный номер клиента");

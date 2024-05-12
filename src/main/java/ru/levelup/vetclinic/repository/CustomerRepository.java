@@ -23,7 +23,7 @@ public interface CustomerRepository {
 
     Customers byLastName(String lastName);
 
-    void update(Customers customer);
+    void update(String personnelNumber, String lastName, String firstName, String middleName, String phoneNumber);
 
     Customers byPersonnelNumber(String personnelNumber);
 

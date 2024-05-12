@@ -15,6 +15,7 @@ public class ServiceListMenuAction implements Action {
     public ServiceListMenuAction() {
         this.serviceRepository = new HibernateServiceRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         List<Services> service = serviceRepository.all();

@@ -9,22 +9,23 @@ import ru.levelup.vetclinic.menu.MenuCustomers.ConsoleMenuCustomers;
 import ru.levelup.vetclinic.repository.AnimalRepository;
 import ru.levelup.vetclinic.repository.hbm.HibernateAnimalRepository;
 
-public class AnimalByAnimalNameMenuAction implements Action {
+public class AnimalUpdateMenuAction implements Action {
 
     private final AnimalRepository animalRepository;
 
-    public AnimalByAnimalNameMenuAction() {
+    public AnimalUpdateMenuAction() {
         this.animalRepository = new HibernateAnimalRepository(HibernateConfiguration.getFactory());
     }
 
     @Override
     public void execute() {
+        String animalPersonnelNumber = ConsoleMenuAnimals.readString("Введите персональный номер питомца");
+        Animals animal = animalRepository.byPersonnelNumber(animalPersonnelNumber);
+
         String animalName = ConsoleMenuAnimals.readString("Введите кличку питомца");
-        Animals animal = animalRepository.byAnimalName(animalName);
-        if (animal == null) {
-            System.out.println("Питомец по кличке: " + animalName + " не найден!");
-        } else {
-            System.out.println(animal);
-        }
+        String animalType = ConsoleMenuAnimals.readString("Введите тип питомца: CAT, DOG, PARROT, TURTLE, RAT, HAMSTER, SNAKE, RACCOON, FERRET, BIRD");
+
+        animalRepository.update(animal.getPersonnelNumber(), animalName, animalType);
+        System.out.println("Информация питомца с персональным номером: " + animalPersonnelNumber + " обновлена!");
     }
 }

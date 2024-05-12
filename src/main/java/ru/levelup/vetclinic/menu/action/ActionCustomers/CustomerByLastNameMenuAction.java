@@ -14,6 +14,7 @@ public class CustomerByLastNameMenuAction implements Action {
     public CustomerByLastNameMenuAction() {
         this.customerRepository = new HibernateCustomerRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         String customerLastName = ConsoleMenuCustomers.readString("Введите Фамилию клиента");

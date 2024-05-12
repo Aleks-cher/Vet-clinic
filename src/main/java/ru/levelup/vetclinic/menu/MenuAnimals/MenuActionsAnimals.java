@@ -15,6 +15,7 @@ public class MenuActionsAnimals {
         ACTION_MAP.put(0, new ExitAction());
         ACTION_MAP.put(1, new AnimalListMenuAction());
         ACTION_MAP.put(2, new AnimalCreateMenuAction());
+        ACTION_MAP.put(3, new AnimalUpdateMenuAction());
         ACTION_MAP.put(4, new AnimalByCustomerIdMenuAction());
         ACTION_MAP.put(5, new AnimalByAnimalNameMenuAction());
         ACTION_MAP.put(6, new AnimalRemoveMenuAction());

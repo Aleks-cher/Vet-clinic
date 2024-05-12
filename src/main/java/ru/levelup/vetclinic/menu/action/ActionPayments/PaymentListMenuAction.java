@@ -15,6 +15,7 @@ public class PaymentListMenuAction implements Action {
     public PaymentListMenuAction() {
         this.paymentRepository = new HibernatePaymentRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         List<Payments> payment = paymentRepository.all();

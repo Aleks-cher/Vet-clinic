@@ -14,6 +14,7 @@ public class AnimalRemoveMenuAction implements Action {
     public AnimalRemoveMenuAction() {
         this.animalRepository = new HibernateAnimalRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         String animalPersonnelNumber = ConsoleMenuAnimals.readString("Введите персональный номер питомца");

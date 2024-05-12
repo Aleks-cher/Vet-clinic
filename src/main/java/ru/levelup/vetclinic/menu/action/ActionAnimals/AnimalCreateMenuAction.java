@@ -23,6 +23,7 @@ public class AnimalCreateMenuAction implements Action {
         this.animalRepository = new HibernateAnimalRepository(HibernateConfiguration.getFactory());
         this.customerRepository = new HibernateCustomerRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         String personnelNumber = ConsoleMenuAnimals.readString("Введите персональный номер питомца");

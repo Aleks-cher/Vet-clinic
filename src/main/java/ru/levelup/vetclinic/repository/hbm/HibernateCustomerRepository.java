@@ -60,19 +60,17 @@ public class HibernateCustomerRepository implements CustomerRepository {
     }
 
     @Override
-    public void update(Customers customer) {
+    public void update(String personnelNumber, String lastName, String firstName, String middleName, String phoneNumber) {
         try (Session session = factory.openSession()) {
             Transaction tx = session.beginTransaction();
-
-            Customers customerUpdate = session.get(Customers.class, customer.getPersonnelNumber()); // скорей всего изменить))
-//            customerUpdate.setPersonnelNumber(customer.getPersonnelNumber());
-            customerUpdate.setLastName(customer.getLastName());
-            customerUpdate.setFirstName(customer.getFirstName());
-            customerUpdate.setMiddleName(customer.getMiddleName());
-            customerUpdate.setPhoneNumber(customer.getPhoneNumber());
-            customerUpdate.setDate(customer.getDate());
-
-            session.persist(customerUpdate);
+            session.createNativeQuery("update customers set last_name= ?, first_name= ?, middle_name= ?, phone_number= ? " +
+                            "where personnel_number= ?")
+                    .setParameter(1, lastName)
+                    .setParameter(2, firstName)
+                    .setParameter(3, middleName)
+                    .setParameter(4, phoneNumber)
+                    .setParameter(5, personnelNumber)
+                    .executeUpdate();
             tx.commit();
         }
     }

@@ -15,6 +15,7 @@ public class AnimalListMenuAction implements Action {
     public AnimalListMenuAction() {
         this.animalRepository = new HibernateAnimalRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         List<Animals> animal = animalRepository.all();

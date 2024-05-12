@@ -1,5 +1,6 @@
 package ru.levelup.vetclinic.repository;
 
+import ru.levelup.vetclinic.domain.Customers;
 import ru.levelup.vetclinic.domain.Vets;
 
 import java.sql.Timestamp;
@@ -19,4 +20,8 @@ public interface VetRepository {
     );
 
     void remove(String personnelNumber);
+
+    void update(String personnelNumber, String lastName, String firstName, String middleName, String functionVet);
+
+    Vets byPersonnelNumber(String personnelNumber);
 }

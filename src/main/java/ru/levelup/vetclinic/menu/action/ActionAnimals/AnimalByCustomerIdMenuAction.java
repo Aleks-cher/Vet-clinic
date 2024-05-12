@@ -21,6 +21,7 @@ public class AnimalByCustomerIdMenuAction implements Action {
         this.animalRepository = new HibernateAnimalRepository(HibernateConfiguration.getFactory());
         this.customerRepository = new HibernateCustomerRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         int customerId = ConsoleMenuCustomers.readInt("Введите ID клиента");

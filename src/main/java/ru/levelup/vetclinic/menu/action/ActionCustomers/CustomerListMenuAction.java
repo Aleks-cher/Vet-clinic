@@ -15,6 +15,7 @@ public class CustomerListMenuAction implements Action {
     public CustomerListMenuAction() {
         this.customerRepository = new HibernateCustomerRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         List<Customers> customer = customerRepository.all();

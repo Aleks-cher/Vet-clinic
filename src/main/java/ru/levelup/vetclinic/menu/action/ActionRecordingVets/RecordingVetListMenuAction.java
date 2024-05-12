@@ -15,6 +15,7 @@ public class RecordingVetListMenuAction implements Action {
     public RecordingVetListMenuAction() {
         this.recordingVetsRepository = new HibernateRecordingVetRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         List<RecordingVets> recordingVetsList = recordingVetsRepository.all();

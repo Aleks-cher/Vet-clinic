@@ -2,6 +2,8 @@ package ru.levelup.vetclinic.menu.MenuServices;
 
 import ru.levelup.vetclinic.menu.Action;
 import ru.levelup.vetclinic.menu.action.ActionServices.ServiceListMenuAction;
+import ru.levelup.vetclinic.menu.action.ActionServices.ServiceRemoveMenuAction;
+import ru.levelup.vetclinic.menu.action.ActionServices.ServiceUpdateMenuAction;
 import ru.levelup.vetclinic.menu.action.ActionServices.ServiseCreateMenuAction;
 import ru.levelup.vetclinic.menu.action.ExitAction;
 
@@ -16,6 +18,8 @@ public class MenuActionsServices {
         ACTION_MAP.put(0, new ExitAction());
         ACTION_MAP.put(1, new ServiceListMenuAction());
         ACTION_MAP.put(2, new ServiseCreateMenuAction());
+        ACTION_MAP.put(3, new ServiceUpdateMenuAction());
+        ACTION_MAP.put(4, new ServiceRemoveMenuAction());
     }
 
 

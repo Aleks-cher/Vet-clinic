@@ -78,4 +78,18 @@ public class HibernateAnimalRepository implements AnimalRepository {
             tx.commit();
         }
     }
+
+    @Override
+    public void update(String personnelNumber, String animalName, String animalType) {
+        try (Session session = factory.openSession()) {
+            Transaction tx = session.beginTransaction();
+            session.createNativeQuery("update animals set animal_name= ?, animal_type= ? " +
+                            "where personnel_number= ?")
+                    .setParameter(1, animalName)
+                    .setParameter(2, animalType)
+                    .setParameter(3, personnelNumber)
+                    .executeUpdate();
+            tx.commit();
+        }
+    }
 }

@@ -17,6 +17,7 @@ public class CustomerCreateMenuAction implements Action {
     public CustomerCreateMenuAction() {
         this.customerRepository = new HibernateCustomerRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         String personnelNumber = ConsoleMenuCustomers.readString("Введите персональный номер клиента");
