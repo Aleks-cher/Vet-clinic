@@ -63,6 +63,12 @@ public class RecordingVets {
     )
     private List<Customers> customersList;
 
-
-
+    public RecordingVets(Integer id, Customers customer, Animals animal, Vets vet, Services service, Timestamp date) {
+        this.id = id;
+        this.customer = customer;
+        this.animal = animal;
+        this.vet = vet;
+        this.service = service;
+        this.date = date;
+    }
 }

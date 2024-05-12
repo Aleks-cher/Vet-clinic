@@ -14,9 +14,9 @@ public class ConsoleMenuRecordingVets {
         System.out.println("1. Вывести список всех записей к ветеринару");
         System.out.println("2. Добавить запись на прием к ветеринару");
         System.out.println("3. Вывести все записи на прием по дате");
-        System.out.println("4. Найти запись на прием по ID ветеринара");
-        System.out.println("5. Найти запись на прием по ID клиента");
-        System.out.println("6. Найти запись на прием по ID питомца");
+        System.out.println("4. Найти записи на прием по персональному номеру ветеринара");
+        System.out.println("5. Найти записи на прием по персональному номеру клиента");
+        System.out.println("6. Найти записи на прием по персональному номеру питомца");
         System.out.println("7. Удалить запись на прием");
         System.out.println("0. Вернуться в главное меню");
     }
