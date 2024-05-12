@@ -18,4 +18,10 @@ public interface RecordingVetsRepository {
     );
 
     List<RecordingVets> byVetPersonnelNumber(Vets vetPersonnelNumber);
+
+    List<RecordingVets> byCustomerPersonnelNumber(Customers customerPersonnelNumber);
+
+    List<RecordingVets> byAnimalPersonnelNumber(Animals animalPersonnelNumber);
+
+    void remove(Integer recordingVetsId);
 }

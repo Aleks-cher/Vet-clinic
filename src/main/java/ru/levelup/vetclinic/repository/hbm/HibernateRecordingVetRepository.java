@@ -50,4 +50,33 @@ public class HibernateRecordingVetRepository implements RecordingVetsRepository 
                     .list();
         }
     }
+
+    @Override
+    public List<RecordingVets> byCustomerPersonnelNumber(Customers customerPersonnelNumber) {
+        try (Session session = factory.openSession()) {
+            return session.createQuery("from RecordingVets where customer= :paramCustomer", RecordingVets.class)
+                    .setParameter("paramCustomer", customerPersonnelNumber)
+                    .list();
+        }
+    }
+
+    @Override
+    public List<RecordingVets> byAnimalPersonnelNumber(Animals animalPersonnelNumber) {
+        try (Session session = factory.openSession()) {
+            return session.createQuery("from RecordingVets where animal= :paramAnimal", RecordingVets.class)
+                    .setParameter("paramAnimal", animalPersonnelNumber)
+                    .list();
+        }
+    }
+
+    @Override
+    public void remove(Integer recordingVetsId) {
+        try (Session session = factory.openSession()) {
+            Transaction tx = session.beginTransaction();
+            session.createNativeQuery("delete from recording_vets where id= ?")
+                    .setParameter(1, recordingVetsId)
+                    .executeUpdate();
+            tx.commit();
+        }
+    }
 }

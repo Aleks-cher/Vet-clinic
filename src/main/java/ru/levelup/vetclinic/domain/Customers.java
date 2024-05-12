@@ -34,13 +34,7 @@ public class Customers {
     @OneToMany(mappedBy = "customer")
     private List<Animals> animalList;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "customers_and_organization",
-//            joinColumns = @JoinColumn(name = "customer_id"),
-//            inverseJoinColumns = @JoinColumn(name = "organization_id")
-//    )
-//    private List<Organization> organizations;
+
     // TODO: Проверить!
     @ManyToMany
     @JoinTable(

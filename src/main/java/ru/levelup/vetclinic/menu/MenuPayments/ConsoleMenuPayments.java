@@ -12,7 +12,7 @@ public class ConsoleMenuPayments {
         System.out.println();
         System.out.println("Меню:");
         System.out.println("1. Вывести список всех платежей");
-        System.out.println("2. Найти платежи по ID клиента");
+        System.out.println("2. Найти платежи по персональному номеру клиента");
         System.out.println("3. Найти платежи по Фамилии");
         System.out.println("0. Вернуться в главное меню");
     }
