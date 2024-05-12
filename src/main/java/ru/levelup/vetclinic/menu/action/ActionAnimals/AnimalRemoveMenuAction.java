@@ -17,8 +17,13 @@ public class AnimalRemoveMenuAction implements Action {
 
     @Override
     public void execute() {
-        String animalPersonnelNumber = ConsoleMenuAnimals.readString("Введите персональный номер питомца");
-        animalRepository.remove(animalPersonnelNumber);
-        System.out.println("Питомец с персональным номером: " + animalPersonnelNumber + " удален!");
+        Integer password = ConsoleMenuAnimals.readInt("Введите пароль");
+        if (password == 23472) {
+            String animalPersonnelNumber = ConsoleMenuAnimals.readString("Введите персональный номер питомца");
+            animalRepository.remove(animalPersonnelNumber);
+            System.out.println("Питомец с персональным номером: " + animalPersonnelNumber + " удален!");
+        } else {
+            System.out.println("Пароль не верный");
+        }
     }
 }

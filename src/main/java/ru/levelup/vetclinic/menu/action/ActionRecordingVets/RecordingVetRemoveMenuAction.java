@@ -2,6 +2,7 @@ package ru.levelup.vetclinic.menu.action.ActionRecordingVets;
 
 import ru.levelup.vetclinic.config.HibernateConfiguration;
 import ru.levelup.vetclinic.menu.Action;
+import ru.levelup.vetclinic.menu.MenuAnimals.ConsoleMenuAnimals;
 import ru.levelup.vetclinic.menu.MenuRecordingVets.ConsoleMenuRecordingVets;
 import ru.levelup.vetclinic.repository.RecordingVetsRepository;
 import ru.levelup.vetclinic.repository.hbm.HibernateRecordingVetRepository;
@@ -15,8 +16,13 @@ public class RecordingVetRemoveMenuAction implements Action {
     }
     @Override
     public void execute() {
+        Integer password = ConsoleMenuAnimals.readInt("Введите пароль");
+        if (password == 23472) {
         Integer recordingVetId = ConsoleMenuRecordingVets.readInt("Введите ID записи на прием");
         recordingVetsRepository.remove(recordingVetId);
         System.out.println("Запись на прием с ID: " + recordingVetId + " удалена!");
+        } else {
+            System.out.println("Пароль не верный");
+        }
     }
 }

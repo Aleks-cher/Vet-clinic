@@ -2,6 +2,7 @@ package ru.levelup.vetclinic.menu.action.ActionServices;
 
 import ru.levelup.vetclinic.config.HibernateConfiguration;
 import ru.levelup.vetclinic.menu.Action;
+import ru.levelup.vetclinic.menu.MenuAnimals.ConsoleMenuAnimals;
 import ru.levelup.vetclinic.menu.MenuCustomers.ConsoleMenuCustomers;
 import ru.levelup.vetclinic.menu.MenuServices.ConsoleMenuServices;
 import ru.levelup.vetclinic.repository.ServiceRepository;
@@ -17,8 +18,13 @@ public class ServiceRemoveMenuAction implements Action {
 
     @Override
     public void execute() {
+        Integer password = ConsoleMenuAnimals.readInt("Введите пароль");
+        if (password == 23472) {
         String servicePersonnelNumber = ConsoleMenuServices.readString("Введите персональный номер услуги");
         serviceRepository.remove(servicePersonnelNumber);
         System.out.println("Услуга с персональным номером: " + servicePersonnelNumber + " удалена!");
+        } else {
+            System.out.println("Пароль не верный");
+        }
     }
 }
