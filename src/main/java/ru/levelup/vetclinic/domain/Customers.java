@@ -6,6 +6,7 @@ import lombok.*;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Set;
+
 @Setter
 @Getter
 @ToString(exclude = "animalList")

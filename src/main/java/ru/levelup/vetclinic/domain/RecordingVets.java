@@ -21,7 +21,32 @@ public class RecordingVets {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-
+    @ManyToOne
+    @JoinColumn(
+            name = "customer_personnel_number",
+            referencedColumnName = "personnel_number"
+    )
+    private Customers customer;
+    @ManyToOne
+    @JoinColumn(
+            name = "animal_personnel_number",
+            referencedColumnName = "personnel_number"
+    )
+    private Animals animal;
+    @ManyToOne
+    @JoinColumn(
+            name = "vet_personnel_number",
+            referencedColumnName = "personnel_number"
+    )
+    private Vets vet;
+    @ManyToOne
+    @JoinColumn(
+            name = "service_personnel_number",
+            referencedColumnName = "personnel_number"
+    )
+    private Services service;
+    @Column(name = "date")
+    private Timestamp date;
     @Override
     public String toString() {
         return "RecordingVets{" +
@@ -33,49 +58,6 @@ public class RecordingVets {
                 ", date=" + date +
                 '}';
     }
-
-    //    @Column(name = "customer_personnel_number")
-//    private String customerPersonnelNumber;
-    @ManyToOne
-    @JoinColumn(
-            name = "customer_personnel_number",
-            referencedColumnName = "personnel_number"
-    )
-    private Customers customer;
-//    @Column(name = "animal_personnel_number")
-//    private String animalPersonnelNumber;
-    @ManyToOne
-    @JoinColumn(
-            name = "animal_personnel_number",
-            referencedColumnName = "personnel_number"
-    )
-    private Animals animal;
-//    @Column(name = "vet_personnel_number")
-//    private String vetPersonnelNumber;
-    @ManyToOne
-    @JoinColumn(
-            name = "vet_personnel_number",
-            referencedColumnName = "personnel_number"
-    )
-    private Vets vet;
-//    @Column(name = "service_personnel_number")
-//    private String servicePersonnelNumber;
-    @ManyToOne
-    @JoinColumn(
-            name = "service_personnel_number",
-            referencedColumnName = "personnel_number"
-    )
-    private Services service;
-    @Column(name = "date")
-    private Timestamp date;
-
-//    @ManyToMany(
-//            fetch = FetchType.EAGER,
-//            mappedBy = "recordingVetsList",
-//            cascade = CascadeType.ALL
-//    )
-//    private List<Customers> customersList;
-
     public RecordingVets(Integer id, Customers customer, Animals animal, Vets vet, Services service, Timestamp date) {
         this.id = id;
         this.customer = customer;

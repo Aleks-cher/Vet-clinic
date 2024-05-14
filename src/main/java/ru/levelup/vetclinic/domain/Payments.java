@@ -29,7 +29,7 @@ public class Payments {
     @ManyToOne
     @JoinColumn(
             name = "service_personnel_number",
-            referencedColumnName = "personnel_number", insertable = false ,updatable = false
+            referencedColumnName = "personnel_number", insertable = false, updatable = false
     )
     private Services service;
 
