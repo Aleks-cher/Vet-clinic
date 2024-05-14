@@ -34,6 +34,8 @@ public class HibernateRecordingVetRepository implements RecordingVetsRepository 
                     date
             );
             session.persist(recordingVet);
+            Payments payments = new Payments(null, customer.getPersonnelNumber(), service.getPersonnelNumber(), date);
+            session.persist(payments);
             tx.commit();
             return recordingVet;
         }

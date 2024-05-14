@@ -18,13 +18,13 @@ public class CustomerRemoveMenuAction implements Action {
 
     @Override
     public void execute() {
-        Integer password = ConsoleMenuAnimals.readInt("Введите пароль");
-        if (password == 23472) {
+        String password = ConsoleMenuAnimals.readString("Вы действительно хотите удалить клиента? напишите 'Да'");
+        if (password.equals("Да")) {
         String customerPersonnelNumber = ConsoleMenuCustomers.readString("Введите персональный номер клиента");
         customerRepository.remove(customerPersonnelNumber);
         System.out.println("Клиент с персональным номером: " + customerPersonnelNumber + " удален!");
         } else {
-            System.out.println("Пароль не верный");
+            System.out.println("Действие откланено!");
         }
     }
 }

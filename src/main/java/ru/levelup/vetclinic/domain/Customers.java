@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 @Setter
 @Getter
-@ToString(exclude = {"service", "recordingVetsList", "animalList"})
+@ToString(exclude = "animalList")
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -34,22 +34,6 @@ public class Customers {
     @OneToMany(mappedBy = "customer")
     private List<Animals> animalList;
 
-
-    // TODO: Проверить!
-    @ManyToMany
-    @JoinTable(
-            name = "payments",
-            joinColumns = @JoinColumn(name = "customer_personnel_number"),
-            inverseJoinColumns = @JoinColumn(name = "service_personnel_number")
-    )
-    private List<Services> service;
-    @ManyToMany
-    @JoinTable(
-            name = "payments",
-            joinColumns = @JoinColumn(name = "customer_personnel_number"),
-            inverseJoinColumns = @JoinColumn(name = "recording_date")
-    )
-    private List<RecordingVets> recordingVetsList;
 
     public Customers(Integer id, String personnelNumber, String lastName, String firstName, String middleName, String phoneNumber, Timestamp date) {
         this.personnelNumber = personnelNumber;

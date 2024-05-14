@@ -18,13 +18,13 @@ public class ServiceRemoveMenuAction implements Action {
 
     @Override
     public void execute() {
-        Integer password = ConsoleMenuAnimals.readInt("Введите пароль");
-        if (password == 23472) {
+        String password = ConsoleMenuAnimals.readString("Вы действительно хотите удалить услугу? напишите 'Да'");
+        if (password.equals("Да")) {
         String servicePersonnelNumber = ConsoleMenuServices.readString("Введите персональный номер услуги");
         serviceRepository.remove(servicePersonnelNumber);
         System.out.println("Услуга с персональным номером: " + servicePersonnelNumber + " удалена!");
         } else {
-            System.out.println("Пароль не верный");
+            System.out.println("Действие откланено!");
         }
     }
 }

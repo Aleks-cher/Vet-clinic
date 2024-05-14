@@ -23,10 +23,10 @@ public class HibernatePaymentRepository implements PaymentRepository {
     }
 
     @Override
-    public List<Payments> byCustomerPersonnelNumber(Customers customerPersonnelNumber) {
+    public List<Payments> byCustomerPersonnelNumber(Customers customer) {
         try (Session session = factory.openSession()) {
             return session.createQuery("from Payments where customerPersonnelNumber= :ParamCustomer", Payments.class)
-                    .setParameter("ParamCustomer", customerPersonnelNumber)
+                    .setParameter("ParamCustomer", customer.getPersonnelNumber())
                     .list();
         }
     }

@@ -22,15 +22,17 @@ public class Animals {
     private String personnelNumber;
     @Column(name = "animal_name")
     private String animalName;
-//    @Column(name = "animal_type")
+    //    @Column(name = "animal_type")
 //    private String animalType;
     @Column(name = "animal_type")
     @Enumerated(EnumType.STRING)
     private AnimalType animalType;
     @Column(name = "date")
     private Timestamp date;
+    @Column(name = "customer_id")
+    private Integer customerId;
     @ManyToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    @JoinColumn(name = "customer_id", referencedColumnName = "id", updatable = false, insertable = false)
     private Customers customer;
 
     public Animals(Integer id, String personnelNumber, String animalName, AnimalType animalType, Timestamp date, Customers customer) {

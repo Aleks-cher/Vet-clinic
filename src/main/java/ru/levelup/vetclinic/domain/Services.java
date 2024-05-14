@@ -10,9 +10,8 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
-@ToString(exclude = "customersList")
+@ToString
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "services")
 public class Services {
@@ -27,12 +26,12 @@ public class Services {
     private String serviceName;
     @Column(name = "price")
     private BigDecimal price;
-    @ManyToMany(
-            fetch = FetchType.LAZY,
-            mappedBy = "service",
-            cascade = CascadeType.ALL
+
+
+    @OneToMany(
+            mappedBy = "service", fetch = FetchType.EAGER
     )
-    private List<Customers> customersList;
+    private List<Payments> paymentsList;
 
     public Services(Integer id, String personnelNumber, String serviceName, BigDecimal price) {
         this.id = id;

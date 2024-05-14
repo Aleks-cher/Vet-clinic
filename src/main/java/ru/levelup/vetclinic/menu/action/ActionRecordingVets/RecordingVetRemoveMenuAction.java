@@ -16,13 +16,13 @@ public class RecordingVetRemoveMenuAction implements Action {
     }
     @Override
     public void execute() {
-        Integer password = ConsoleMenuAnimals.readInt("Введите пароль");
-        if (password == 23472) {
+        String password = ConsoleMenuAnimals.readString("Вы действительно хотите удалить запись на прием? напишите 'Да'");
+        if (password.equals("Да")) {
         Integer recordingVetId = ConsoleMenuRecordingVets.readInt("Введите ID записи на прием");
         recordingVetsRepository.remove(recordingVetId);
         System.out.println("Запись на прием с ID: " + recordingVetId + " удалена!");
         } else {
-            System.out.println("Пароль не верный");
+            System.out.println("Действие откланено!");
         }
     }
 }

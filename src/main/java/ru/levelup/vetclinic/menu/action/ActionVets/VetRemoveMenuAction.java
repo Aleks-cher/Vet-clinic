@@ -18,13 +18,13 @@ public class VetRemoveMenuAction implements Action {
 
     @Override
     public void execute() {
-        Integer password = ConsoleMenuAnimals.readInt("Введите пароль");
-        if (password == 23472) {
+        String password = ConsoleMenuAnimals.readString("Вы действительно хотите удалить ветеринара? напишите 'Да'");
+        if (password.equals("Да")) {
         String vetPersonnelNumber = ConsoleMenuVets.readString("Введите персональный номер ветеринара");
         vetRepository.remove(vetPersonnelNumber);
         System.out.println("Ветеринар с персональным номером: " + vetPersonnelNumber + " удален!");
         } else {
-            System.out.println("Пароль не верный");
+            System.out.println("Действие откланено!");
         }
     }
 }

@@ -10,9 +10,9 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Getter
-@ToString(exclude = {"customer", "animal", "vet", "service", "customersList"})
+
 @NoArgsConstructor
-@AllArgsConstructor
+
 @Entity
 @Table(name = "recording_vets")
 public class RecordingVets {
@@ -21,7 +21,20 @@ public class RecordingVets {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-//    @Column(name = "customer_personnel_number")
+
+    @Override
+    public String toString() {
+        return "RecordingVets{" +
+                "id=" + id +
+                ", customer=" + customer.getPersonnelNumber() +
+                ", animal=" + animal.getPersonnelNumber() +
+                ", vet=" + vet.getPersonnelNumber() +
+                ", service=" + service.getPersonnelNumber() +
+                ", date=" + date +
+                '}';
+    }
+
+    //    @Column(name = "customer_personnel_number")
 //    private String customerPersonnelNumber;
     @ManyToOne
     @JoinColumn(
@@ -56,12 +69,12 @@ public class RecordingVets {
     @Column(name = "date")
     private Timestamp date;
 
-    @ManyToMany(
-            fetch = FetchType.EAGER,
-            mappedBy = "recordingVetsList",
-            cascade = CascadeType.ALL
-    )
-    private List<Customers> customersList;
+//    @ManyToMany(
+//            fetch = FetchType.EAGER,
+//            mappedBy = "recordingVetsList",
+//            cascade = CascadeType.ALL
+//    )
+//    private List<Customers> customersList;
 
     public RecordingVets(Integer id, Customers customer, Animals animal, Vets vet, Services service, Timestamp date) {
         this.id = id;
