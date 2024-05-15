@@ -15,6 +15,7 @@ public class MenuActionsRecordingVets {
         ACTION_MAP.put(0, new ExitAction());
         ACTION_MAP.put(1, new RecordingVetListMenuAction());
         ACTION_MAP.put(2, new RecordingVetCreateMenuAction());
+        ACTION_MAP.put(3, new RecordingVetbyDateMenuAction());
         ACTION_MAP.put(4, new RecordingVetListByVetPersonnelNumberMenuAction());
         ACTION_MAP.put(5, new RecordingVetListByCustomerPersonnelNumberMenuAction());
         ACTION_MAP.put(6, new RecordingVetListByAnimalPersonnelNumberMenuAction());

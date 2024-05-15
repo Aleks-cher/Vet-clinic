@@ -3,6 +3,8 @@ package ru.levelup.vetclinic.menu.MenuRecordingVets;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class ConsoleMenuRecordingVets {
 
@@ -32,5 +34,9 @@ public class ConsoleMenuRecordingVets {
 
     public static int readInt(String message) {
         return Integer.parseInt(readString(message));
+    }
+
+    public static Timestamp readDate(String message) {
+        return Timestamp.valueOf(readString(message));
     }
 }

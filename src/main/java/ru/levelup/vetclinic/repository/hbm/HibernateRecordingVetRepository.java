@@ -81,4 +81,13 @@ public class HibernateRecordingVetRepository implements RecordingVetsRepository 
             tx.commit();
         }
     }
+
+    @Override
+    public List<RecordingVets> byDate(Timestamp date) {
+        try (Session session = factory.openSession()) {
+            return session.createNativeQuery("select from recording_vets where date= ?")
+                    .setParameter(1, date)
+                    .list();
+        }
+    }
 }

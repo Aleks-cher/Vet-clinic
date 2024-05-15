@@ -24,4 +24,6 @@ public interface RecordingVetsRepository {
     List<RecordingVets> byAnimalPersonnelNumber(Animals animalPersonnelNumber);
 
     void remove(Integer recordingVetsId);
+
+    List<RecordingVets> byDate(Timestamp date);
 }
