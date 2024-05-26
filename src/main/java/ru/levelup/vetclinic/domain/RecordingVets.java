@@ -47,6 +47,7 @@ public class RecordingVets {
     private Services service;
     @Column(name = "date")
     private Timestamp date;
+
     @Override
     public String toString() {
         return "RecordingVets{" +
@@ -58,6 +59,7 @@ public class RecordingVets {
                 ", date=" + date +
                 '}';
     }
+
     public RecordingVets(Integer id, Customers customer, Animals animal, Vets vet, Services service, Timestamp date) {
         this.id = id;
         this.customer = customer;

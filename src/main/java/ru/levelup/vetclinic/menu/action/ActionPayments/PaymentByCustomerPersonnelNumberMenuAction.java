@@ -21,6 +21,7 @@ public class PaymentByCustomerPersonnelNumberMenuAction implements Action {
         this.paymentRepository = new HibernatePaymentRepository(HibernateConfiguration.getFactory());
         this.customerRepository = new HibernateCustomerRepository(HibernateConfiguration.getFactory());
     }
+
     @Override
     public void execute() {
         String customerPersonnelNumber = ConsoleMenuCustomers.readString("Введите персональный номер клиента");

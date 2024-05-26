@@ -40,7 +40,6 @@ public class HibernateConfiguration {
                 .addAnnotatedClass(Vets.class);
 
 
-
         factory = configuration.buildSessionFactory(registry);
 
     }

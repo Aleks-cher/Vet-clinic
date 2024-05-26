@@ -10,10 +10,12 @@ import ru.levelup.vetclinic.domain.Services;
 import ru.levelup.vetclinic.repository.PaymentRepository;
 
 import java.util.List;
+
 @RequiredArgsConstructor
 public class HibernatePaymentRepository implements PaymentRepository {
 
     private final SessionFactory factory;
+
     @Override
     public List<Payments> all() {
         try (Session session = factory.openSession()) {

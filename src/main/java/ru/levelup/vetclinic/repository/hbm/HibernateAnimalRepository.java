@@ -11,10 +11,12 @@ import ru.levelup.vetclinic.repository.AnimalRepository;
 
 import java.sql.Timestamp;
 import java.util.List;
+
 @RequiredArgsConstructor
 public class HibernateAnimalRepository implements AnimalRepository {
 
     private final SessionFactory factory;
+
     @Override
     public List<Animals> all() {
         try (Session session = factory.openSession()) {

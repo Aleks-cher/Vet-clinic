@@ -12,10 +12,12 @@ import ru.levelup.vetclinic.repository.ServiceRepository;
 
 import java.math.BigDecimal;
 import java.util.List;
+
 @RequiredArgsConstructor
 public class HibernateServiceRepository implements ServiceRepository {
 
     private final SessionFactory factory;
+
     @Override
     public List<Services> all() {
         try (Session session = factory.openSession()) {

@@ -9,10 +9,12 @@ import ru.levelup.vetclinic.repository.RecordingVetsRepository;
 
 import java.sql.Timestamp;
 import java.util.List;
+
 @RequiredArgsConstructor
 public class HibernateRecordingVetRepository implements RecordingVetsRepository {
 
     private final SessionFactory factory;
+
     @Override
     public List<RecordingVets> all() {
         try (Session session = factory.openSession()) {
@@ -44,9 +46,6 @@ public class HibernateRecordingVetRepository implements RecordingVetsRepository 
     @Override
     public List<RecordingVets> byVetPersonnelNumber(Vets vetPersonnelNumber) {
         try (Session session = factory.openSession()) {
-//            return session.createNativeQuery("select from recording_vets where vet_personnel_number= ?")
-//                    .setParameter(1, vetPersonnelNumber)
-//                    .list();
             return session.createQuery("from RecordingVets where vet= :paramVet", RecordingVets.class)
                     .setParameter("paramVet", vetPersonnelNumber)
                     .list();
